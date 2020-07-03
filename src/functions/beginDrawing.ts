@@ -1,5 +1,5 @@
 import bg from '../img/bg.png';
-import { Drawable, GameState } from '../types';
+import { Drawable, GameState } from '../entity-types';
 
 let ctx: CanvasRenderingContext2D, state: GameState;
 let canvasWidth: number, canvasHeight: number;

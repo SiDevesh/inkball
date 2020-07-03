@@ -1,5 +1,5 @@
 import Matter from 'matter-js';
-import { Drawable } from '../types';
+import { Drawable } from '../entity-types';
 
 /**
  * Creates a new Drawable containing a line segment (rotated rectangle of a set height) from (x1, y1) to (x2, y2).

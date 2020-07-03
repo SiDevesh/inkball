@@ -1,14 +1,14 @@
 # inkball
 
 <p align="center">
-    <a href="https://matsz.dev/inkball/">
-        <strong>Click here to play the game.</strong>
+    <a href="https://inkball.netlify.app">
+        <strong>Click here to play the game</strong>
     </a>
 </p>
 
 <p align="center">
-    <a href="https://matsz.dev/inkball/">
-        <img src="https://raw.githubusercontent.com/mat-sz/inkball/master/screenshot.png" alt="Screenshot">
+    <a href="https://inkball.netlify.app/">
+        <img src="https://raw.githubusercontent.com/mat-sz/inkball/master/screenshot.png" alt="screenshot">
     </a>
 </p>
 

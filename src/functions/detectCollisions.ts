@@ -1,5 +1,5 @@
 import Matter from 'matter-js';
-import { GameState, Color } from '../types';
+import { GameState, Color } from '../entity-types';
 
 let engine: Matter.Engine;
 let state: GameState;

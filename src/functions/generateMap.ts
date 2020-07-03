@@ -1,4 +1,4 @@
-import { MapObject } from "../types";
+import { MapObject } from "../entity-types";
 
 export const MAP_SIZE = 20;
 

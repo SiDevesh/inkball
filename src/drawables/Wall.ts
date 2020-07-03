@@ -1,5 +1,5 @@
 import Matter from 'matter-js';
-import { Drawable, Color } from '../types';
+import { Drawable, Color } from '../entity-types';
 import box from '../img/box.png';
 import box_gold from '../img/box_gold.png';
 import { boxWidth } from '../constants';

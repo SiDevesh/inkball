@@ -5,7 +5,7 @@ import { boxWidth } from '../constants';
 import Wall from '../drawables/Wall';
 import Ball from '../drawables/Ball';
 import Goal from '../drawables/Goal';
-import { GameState, Color, MapObject } from '../types';
+import { GameState, Color, MapObject } from '../entity-types';
 
 export default function prepareMap(map: number[][],
     world: Matter.World,

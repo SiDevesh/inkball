@@ -10,7 +10,7 @@ import beginDrawing from './functions/beginDrawing';
 import detectCollisions from './functions/detectCollisions';
 import maps from './maps';
 
-import { GameState, Segment } from './types';
+import { GameState, Segment } from './entity-types';
 
 const canvas: HTMLCanvasElement = document.getElementById('canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');

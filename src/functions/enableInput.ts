@@ -1,4 +1,4 @@
-import { Segment } from '../types';
+import { Segment } from '../entity-types';
 
 let drawing = false;
 let x = 0;

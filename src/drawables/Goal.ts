@@ -1,5 +1,5 @@
 import Matter from 'matter-js';
-import { Drawable, Color } from '../types';
+import { Drawable, Color } from '../entity-types';
 import goal from '../img/goal.png';
 import goal_red from '../img/goal_red.png';
 import goal_blue from '../img/goal_blue.png';
