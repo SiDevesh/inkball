@@ -1,4 +1,4 @@
-import { MapObject } from "../Types";
+import { MapObject } from "../types";
 
 export const MAP_SIZE = 20;
 

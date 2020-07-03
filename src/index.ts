@@ -1,5 +1,6 @@
 import Matter from 'matter-js';
-import "./App.scss";
+import './neomorphism.css';
+import "./main.scss";
 
 import LineSegment from './drawables/LineSegment';
 
@@ -9,7 +10,7 @@ import beginDrawing from './functions/beginDrawing';
 import detectCollisions from './functions/detectCollisions';
 import maps from './maps';
 
-import { GameState, Segment } from './Types';
+import { GameState, Segment } from './types';
 
 const canvas: HTMLCanvasElement = document.getElementById('canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
@@ -25,6 +26,7 @@ const gameState: GameState = {
 
 const resetGameButton = document.getElementById("reset-game");
 const resetLevelButton = document.getElementById("reset-level");
+const progressBar = document.getElementById("progressbar");
 
 let currentMapIndex = 0;
 const reset = (map: number[][]) => {
@@ -34,8 +36,7 @@ const reset = (map: number[][]) => {
     gameState.balls = [];
     gameState.lines = [[]];
     prepareMap(map, world, gameState);
-
-    resetLevelButton.innerText = "Reset level (" + (currentMapIndex + 1) + "/" + (maps.length - 1) + ")";
+    progressBar.style.width = `${100 * currentMapIndex / (maps.length - 1)}%`;
 }
 
 // Timeout necessary because of ball speed being too high
@@ -80,7 +81,6 @@ const cancelDrawing = enableInput(canvas, (line) => {
     pushSegment(line[line.length - 1]);
 }, (line) => {
     pushSegment(line[line.length - 1]);
-    
     gameState.lines.push([]);
 });
 
@@ -88,18 +88,3 @@ document.addEventListener('gesturestart', (e) => {
     // Disable zoom on mobile Safari.
     e.preventDefault();
 });
-
-if (process.env.NODE_ENV === 'development') {
-    document.getElementById("canvases").style.display = 'flex';
-    
-    // Debug mode.
-    let render = Matter.Render.create({
-        element: document.getElementById('debug'),
-        engine: engine,
-        options: {
-            height: 800
-        }
-    });
-    
-    Matter.Render.run(render);
-}

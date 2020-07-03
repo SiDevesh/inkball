@@ -1,4 +1,4 @@
-import { Segment } from '../Types';
+import { Segment } from '../types';
 
 let drawing = false;
 let x = 0;
@@ -30,19 +30,25 @@ function getOffset(e: TouchEvent) {
 }
 
 const touchStart = (e: TouchEvent) => {
-    cancelDrawing();
-    const offset = getOffset(e);
-    beginDrawing(offset.x, offset.y);
+    if (e.targetTouches[0].radiusX === 0) {
+        cancelDrawing();
+        const offset = getOffset(e);
+        beginDrawing(offset.x, offset.y);
+    }
 };
 
 const touchMove = (e: TouchEvent) => {
-    const offset = getOffset(e);
-    draw(offset.x, offset.y);
+    if (e.targetTouches[0].radiusX === 0) {
+        const offset = getOffset(e);
+        draw(offset.x, offset.y);
+    }
 };
 
 const touchEnd = (e: TouchEvent) => {
-    const offset = getOffset(e);
-    endDrawing(offset.x, offset.y);
+    if (e.targetTouches[0].radiusX === 0) {
+        const offset = getOffset(e);
+        endDrawing(offset.x, offset.y);
+    }
 };
 
 function beginDrawing(_x: number, _y: number) {

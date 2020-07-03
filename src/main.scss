@@ -1,0 +1,37 @@
+html, body {
+    overflow: hidden;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0eaf9;
+}
+
+canvas {
+    width: 800px;
+    max-width: calc(100vw - 32px);
+    height: auto;
+    border-radius: 8px;
+    background: #e0eaf9;
+    box-shadow:  4px 4px 8px rgba(56,53,85,0.3), -4px -4px 8px rgba(255,255,255,0.5), inset 1px 1px 1px rgba(224,234,249,0.5);
+}
+
+.progress {
+    width: 800px;
+    max-width: calc(100vw - 32px);
+    margin: 16px 0px 0px 0px;
+}
+
+.progress > .progress-bar {
+    background-color: #73d994;
+}
+
+.buttons {
+    margin: 16px 0px 0px 0px;
+}
