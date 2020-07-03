@@ -1,6 +1,5 @@
-# inkball
-
 <p align="center">
+    <h1>InkBall</h1>
     <a href="https://inkball.netlify.app">
         <strong>Click here to play the game</strong>
     </a>
