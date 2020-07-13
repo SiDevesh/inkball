@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
@@ -48,6 +49,11 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: 'public' },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
