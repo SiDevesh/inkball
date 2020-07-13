@@ -91,7 +91,7 @@ document.addEventListener('gesturestart', (e) => {
 });
 
 OfflinePluginRuntime.install();
-window.addEventListener("beforeinstallprompt", (e) => {
+window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault(); // Prevents prompt display
     e.prompt();
 });
