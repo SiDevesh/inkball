@@ -31,6 +31,7 @@ function getOffset(e: TouchEvent) {
 
 const touchStart = (e: TouchEvent) => {
     if (e.targetTouches[0].radiusX === 0) {
+        e.preventDefault();
         cancelDrawing();
         const offset = getOffset(e);
         beginDrawing(offset.x, offset.y);
@@ -41,14 +42,16 @@ const touchMove = (e: TouchEvent) => {
     if (e.targetTouches[0].radiusX === 0) {
         const offset = getOffset(e);
         draw(offset.x, offset.y);
+    } else {
+        touchEnd(e);
     }
 };
 
 const touchEnd = (e: TouchEvent) => {
-    if (e.targetTouches[0].radiusX === 0) {
+    // if (e.targetTouches[0].radiusX === 0) {
         const offset = getOffset(e);
         endDrawing(offset.x, offset.y);
-    }
+    // }
 };
 
 function beginDrawing(_x: number, _y: number) {
@@ -80,15 +83,15 @@ function cancelDrawing() {
 }
 
 export default function enableInput(canvas: HTMLCanvasElement, _onUpdateLine: (line: Segment[]) => void, _onFinishLine: (line: Segment[]) => void): () => void {
-    canvas.addEventListener('mousedown', mouseDown);
-    canvas.addEventListener('mousemove', mouseMove);
-    canvas.addEventListener('mouseup', mouseUp);
-    canvas.addEventListener('mouseleave', mouseUp);
+    // canvas.addEventListener('mousedown', mouseDown);
+    // canvas.addEventListener('mousemove', mouseMove);
+    // canvas.addEventListener('mouseup', mouseUp);
+    // canvas.addEventListener('mouseleave', mouseUp);
 
     canvas.addEventListener('touchstart', touchStart);
     canvas.addEventListener('touchmove', touchMove);
-    canvas.addEventListener('touchend', touchEnd);
-    canvas.addEventListener('touchcancel', touchEnd);
+    // canvas.addEventListener('touchend', touchEnd);
+    // canvas.addEventListener('touchcancel', touchEnd);
 
     onUpdateLine = _onUpdateLine;
     onFinishLine = _onFinishLine;
