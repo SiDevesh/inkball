@@ -15,5 +15,6 @@
     ],
     "theme_color": "#e0eaf9",
     "background_color": "#e0eaf9",
-    "display": "standalone"
+    "display": "standalone",
+    "start_url": "https://inkball.netlify.app"
 }
