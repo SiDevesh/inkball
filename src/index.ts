@@ -90,4 +90,19 @@ document.addEventListener('gesturestart', (e) => {
     e.preventDefault();
 });
 
-OfflinePluginRuntime.install();
+OfflinePluginRuntime.install({
+  onUpdating: () => {
+    console.log('SW Event:', 'onUpdating');
+  },
+  onUpdateReady: () => {
+    console.log('SW Event:', 'onUpdateReady');
+    OfflinePluginRuntime.applyUpdate();
+  },
+  onUpdated: () => {
+    console.log('SW Event:', 'onUpdated');
+    window.location.reload();
+  },
+  onUpdateFailed: () => {
+    console.log('SW Event:', 'onUpdateFailed');
+  }
+});

@@ -58,8 +58,9 @@ module.exports = {
       template: './public/index.html',
     }),
     new OfflinePlugin({
-      responseStrategy: 'network-first',
-      autoUpdate: true,
+      ServiceWorker: {
+        events: true,
+      },
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
