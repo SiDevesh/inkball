@@ -17,6 +17,7 @@ canvas {
     width: 800px;
     max-width: calc(100vw - 32px);
     height: auto;
+    max-height: calc(100vw - 16px- 1.2em - 0.6em - 1rem - 0.6em - 32px);
     border-radius: 8px;
     background: #e0eaf9;
     box-shadow:  4px 4px 8px rgba(56,53,85,0.3), -4px -4px 8px rgba(255,255,255,0.5), inset 1px 1px 1px rgba(224,234,249,0.5);
