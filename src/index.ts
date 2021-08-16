@@ -90,4 +90,6 @@ document.addEventListener('gesturestart', (e) => {
     e.preventDefault();
 });
 
+window.alert('InkBall only supports stylus input, touch or mouse is not supported.');
+
 OfflinePluginRuntime.install();

@@ -24,8 +24,8 @@ function getOffset(e: TouchEvent) {
     const rectangle = (e.target as HTMLElement).getBoundingClientRect();
     const touch = e.touches[0];
     return {
-        x: (touch.pageX - rectangle.left) * 800/rectangle.width,
-        y: (touch.pageY - rectangle.top) * 800/rectangle.height,
+        x: (touch.pageX - rectangle.left) * 800 / rectangle.width,
+        y: (touch.pageY - rectangle.top) * 800 / rectangle.height,
     };
 }
 
@@ -83,15 +83,8 @@ function cancelDrawing() {
 }
 
 export default function enableInput(canvas: HTMLCanvasElement, _onUpdateLine: (line: Segment[]) => void, _onFinishLine: (line: Segment[]) => void): () => void {
-    // canvas.addEventListener('mousedown', mouseDown);
-    // canvas.addEventListener('mousemove', mouseMove);
-    // canvas.addEventListener('mouseup', mouseUp);
-    // canvas.addEventListener('mouseleave', mouseUp);
-
     canvas.addEventListener('touchstart', touchStart);
     canvas.addEventListener('touchmove', touchMove);
-    // canvas.addEventListener('touchend', touchEnd);
-    // canvas.addEventListener('touchcancel', touchEnd);
 
     onUpdateLine = _onUpdateLine;
     onFinishLine = _onFinishLine;
